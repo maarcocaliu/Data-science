@@ -1,0 +1,17 @@
+CREATE VIEW sensor_percentage AS
+WITH sensor_count AS (
+    SELECT
+        COUNT(*) FILTER (WHERE sensori = 'Aboveground') AS aboveground_count,
+        COUNT(*) FILTER (WHERE sensori = 'Underground') AS underground_count,
+        COUNT(*) AS total_sensors
+    FROM 
+        public.mts_anagrafica
+)
+SELECT
+    aboveground_count,
+    underground_count,
+    total_sensors,
+    (aboveground_count::float / total_sensors) * 100 AS aboveground_percentage,
+    (underground_count::float / total_sensors) * 100 AS underground_percentage
+FROM 
+    sensor_count;
