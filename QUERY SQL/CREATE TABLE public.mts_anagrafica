@@ -1,0 +1,7 @@
+CREATE TABLE public.mts_anagrafica AS
+SELECT m.postazione, m.giorno, m.ngiornosettimana, m.strada, m.transiti, m.trnonclassificato, 
+       m.trleggeri, m.trpesanti, m.trdiurno, m.trnotturno, m.trferiali, m.trfestivi,
+       a.sensori, a.provincia, a.comune, a.tipo_strada, a.numero_strada, a.nome_strada
+FROM public.mts_clean m
+JOIN public.anagrafica a
+    ON m.postazione = a.postazione;
