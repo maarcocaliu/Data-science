@@ -1,0 +1,5 @@
+ALTER TABLE public.strada 
+DROP COLUMN sensori, 
+DROP COLUMN provincia, 
+DROP COLUMN tipo_strada, 
+DROP COLUMN numero_strada;
