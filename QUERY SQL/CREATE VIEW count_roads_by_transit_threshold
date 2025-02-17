@@ -1,0 +1,23 @@
+CREATE VIEW count_roads_by_transit_threshold AS
+WITH avg_transits AS (
+    SELECT 
+        strada,
+        AVG(transiti) AS avg_transiti
+    FROM 
+        public.mts_anagrafica
+    GROUP BY 
+        strada
+)
+SELECT 
+    CASE 
+        WHEN avg_transiti > 20000 THEN 'Più transiti della soglia'
+        ELSE 'Meno transiti della soglia'
+    END AS transit_comparison,
+    COUNT(DISTINCT strada) AS road_count
+FROM 
+    avg_transits
+GROUP BY 
+    CASE 
+        WHEN avg_transiti > 20000 THEN 'Più transiti della soglia'
+        ELSE 'Meno transiti della soglia'
+    END;
