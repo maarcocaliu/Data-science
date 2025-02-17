@@ -1,0 +1,4 @@
+"Does data from one sensor help in forecasting data from other sensors?"
+
+Se il modello misto (che usa entrambe le feature sensoriali) ottiene un MAE inferiore rispetto ai modelli indipendenti, e se le feature 'sensori_Aboveground' o 'sensori_Underground' 
+risultano rilevanti (alta importanza), allora i dati di un tipo di sensore contribuiscono alla previsione dei dati dell'altro.
