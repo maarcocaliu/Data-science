@@ -1,0 +1,191 @@
+
+# Importazione delle librerie necessarie
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping
+import matplotlib.pyplot as plt
+
+# ============================
+# 1. Caricamento dei dati
+# ============================
+host = "localhost"
+port = "5432"
+dbname = "DataScience"
+user = "postgres"
+password = "2430"
+
+conn = psycopg2.connect(host=host, port=port, dbname=dbname, user=user, password=password)
+query = "SELECT * FROM public.vew_mts_prov"
+df = pd.read_sql_query(query, conn)
+conn.close()
+
+print("Dati caricati:")
+print(df.head())
+
+# Creazione di una tabella pivot per il calcolo della correlazione
+pivot_table = df.pivot_table(index="Giorno", columns="Postazione", values="Transiti - Totale", aggfunc="sum")
+
+# Calcolo della matrice di correlazione
+correlation_matrix = pivot_table.corr()
+
+# Funzione per trovare la strada più correlata per ogni postazione
+def trova_strade_correlate(correlation_matrix):
+    strade_correlate = {}
+    for postazione in correlation_matrix.columns:
+        correlazioni = correlation_matrix[postazione].drop(postazione)
+        strada_correlata = correlazioni.idxmax()
+        valore_correlazione = correlazioni.max()
+        strade_correlate[postazione] = (strada_correlata, valore_correlazione)
+    return strade_correlate
+
+# Trova le strade correlate
+strade_correlate = trova_strade_correlate(correlation_matrix)
+
+# Funzione per creare sequenze temporali e fare previsioni per una qualsiasi data
+def crea_sequenze_correlate(df, lookback, forecast_date, strade_correlate):
+    """
+    Crea sequenze temporali per il forecasting, includendo feature aggiuntive e dati di una strada correlata.
+    Permette di generare una previsione per una qualsiasi data futura.
+    """
+    sequenze = []
+    postazioni = df["Postazione"].unique()
+    
+    forecast_date = pd.to_datetime(forecast_date)  # Converte la data in datetime
+    
+    for postazione in postazioni:
+        dati_postazione = df[df["Postazione"] == postazione].copy()
+        strada_correlata = strade_correlate.get(postazione, (None, None))[0]
+        
+        if strada_correlata:
+            dati_correlata = df[df["Postazione"] == strada_correlata].copy()
+        
+        dati_postazione = dati_postazione[dati_postazione["Giorno"] < forecast_date]
+        if strada_correlata:
+            dati_correlata = dati_correlata[dati_correlata["Giorno"] < forecast_date]
+        
+        if len(dati_postazione) < lookback or (strada_correlata and len(dati_correlata) < lookback):
+            continue  
+        
+        X_seq_transiti = dati_postazione.iloc[-lookback:]["Transiti - Totale"].values.flatten()
+        X_seq_pesanti = dati_postazione.iloc[-lookback:]["Transiti - Pesanti"].values.flatten()
+        X_seq_leggeri = dati_postazione.iloc[-lookback:]["Transiti - Leggeri"].values.flatten()
+        X_seq_festivi = dati_postazione.iloc[-lookback:]["Transiti - Festivi"].values.flatten()
+        X_seq_feriali = dati_postazione.iloc[-lookback:]["Transiti - Feriali"].values.flatten()
+        
+        if strada_correlata:
+            X_seq_correlata = dati_correlata.iloc[-lookback:]["Transiti - Totale"].values.flatten()
+            X_seq = np.concatenate((X_seq_transiti, X_seq_pesanti, X_seq_leggeri, X_seq_festivi, X_seq_feriali, X_seq_correlata))
+        else:
+            X_seq = np.concatenate((X_seq_transiti, X_seq_pesanti, X_seq_leggeri, X_seq_festivi, X_seq_feriali))
+        
+        sequenze.append(X_seq)
+    
+    return np.array(sequenze)
+
+# Parametri
+lookback = 14
+
+# Richiesta della data all'utente
+forecast_date = input("Inserisci la data per la previsione (YYYY-MM-DD): ")
+
+# Creazione delle sequenze per la previsione
+X = crea_sequenze_correlate(df, lookback, forecast_date, strade_correlate)
+
+if len(X) == 0:
+    raise ValueError("Nessuna sequenza generata. Verifica la data inserita e la disponibilità dei dati.")
+
+# Normalizzazione dei dati
+scaler_X = StandardScaler()
+X_scaled = scaler_X.fit_transform(X)
+
+# Definizione del modello con due layer nascosti
+model = Sequential()
+model.add(Dense(128, input_dim=X_scaled.shape[1], activation="relu"))
+model.add(Dropout(0.3))
+model.add(Dense(64, activation="relu"))
+model.add(Dropout(0.3))
+model.add(Dense(1))
+
+# Compilazione del modello
+model.compile(optimizer=Adam(learning_rate=0.001), loss="mean_squared_error")
+
+# Simulazione del training (usa i dati storici per addestrare il modello)
+# In un caso reale, questo sarebbe già stato addestrato e solo caricheremmo i pesi
+early_stopping = EarlyStopping(monitor="val_loss", patience=10, restore_best_weights=True)
+
+# Se si avesse uno storico già addestrato, il modello verrebbe caricato così:
+# model.load_weights("modello_pesato.h5")
+
+# Previsione sulla data scelta
+y_pred = model.predict(X_scaled).flatten()
+
+# Visualizzazione del risultato
+print(f"Previsione per il {forecast_date}: {y_pred}")
+
+import matplotlib.pyplot as plt
+
+def plot_previsioni(y_test, y_pred, forecast_date):
+    """
+    Funzione per visualizzare le previsioni rispetto ai valori reali.
+    :param y_test: Valori reali del traffico.
+    :param y_pred: Valori previsti dal modello.
+    :param forecast_date: Data per cui è stata fatta la previsione.
+    """
+    plt.figure(figsize=(10, 6))
+    
+    plt.plot(y_test, label="Valori Reali", color="blue", marker="o", linestyle="-")
+    plt.plot(y_pred, label="Previsioni", color="red", marker="x", linestyle="--")
+    
+    plt.axvline(x=len(y_test)-1, color="black", linestyle=":", label=f"Forecast: {forecast_date}")
+    
+    plt.xlabel("Tempo")
+    plt.ylabel("Transiti Totali")
+    plt.title(f"Confronto Previsioni vs Valori Reali ({forecast_date})")
+    plt.legend()
+    plt.grid(True)
+    
+    plt.show()
+
+# Esempio di utilizzo:
+# Assumiamo che y_test siano i valori reali e y_pred le previsioni normalizzate
+# y_test = scaler_y.inverse_transform(y_test)  # Se necessario, riportiamo i dati alla scala originale
+# y_pred_rescaled = scaler_y.inverse_transform(y_pred.reshape(-1, 1)).flatten()
+
+plot_previsioni(y_test, y_pred_rescaled, forecast_date)
+
+import matplotlib.pyplot as plt
+
+def plot_previsioni(y_test, y_pred, forecast_date):
+    """
+    Funzione per visualizzare le previsioni rispetto ai valori reali.
+    :param y_test: Valori reali del traffico.
+    :param y_pred: Valori previsti dal modello.
+    :param forecast_date: Data per cui è stata fatta la previsione.
+    """
+    plt.figure(figsize=(10, 6))
+    
+    plt.plot(y_test, label="Valori Reali", color="blue", marker="o", linestyle="-")
+    plt.plot(y_pred, label="Previsioni", color="red", marker="x", linestyle="--")
+    
+    plt.axvline(x=len(y_test)-1, color="black", linestyle=":", label=f"Forecast: {forecast_date}")
+    
+    plt.xlabel("Tempo")
+    plt.ylabel("Transiti Totali")
+    plt.title(f"Confronto Previsioni vs Valori Reali ({forecast_date})")
+    plt.legend()
+    plt.grid(True)
+    
+    plt.show()
+
+# Esempio di utilizzo:
+# Assumiamo che y_test siano i valori reali e y_pred le previsioni normalizzate
+# y_test = scaler_y.inverse_transform(y_test)  # Se necessario, riportiamo i dati alla scala originale
+# y_pred_rescaled = scaler_y.inverse_transform(y_pred.reshape(-1, 1)).flatten()
+
+plot_previsioni(y_test, y_pred_rescaled, forecast_date)
+
+
