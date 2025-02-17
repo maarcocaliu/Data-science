@@ -1,4 +1,45 @@
+SENSORI - QUESITO:
 "Does data from one sensor help in forecasting data from other sensors?"
 
 Se il modello misto (che usa entrambe le feature sensoriali) ottiene un MAE inferiore rispetto ai modelli indipendenti, e se le feature 'sensori_Aboveground' o 'sensori_Underground' 
 risultano rilevanti (alta importanza), allora i dati di un tipo di sensore contribuiscono alla previsione dei dati dell'altro.
+
+
+
+
+SENSORI 2
+
+L’obiettivo è ridurre il rumore e aumentare la capacità predittiva dei dati Underground, in modo che, una volta combinati con quelli Aboveground, il modello misto migliori le sue prestazioni (ossia, riduca il MAE).
+
+Conservare il tipo di sensore originale:
+
+Prima di fare l’encoding, salvo la colonna “sensori” in una nuova colonna (sensor_type), così da poter effettuare operazioni di raggruppamento (ad esempio, per calcolare medie mobili) per ciascun tipo.
+Creare una feature “rolling” (media mobile) sui dati di traffico:
+
+Calcoliamo la media mobile dei dati (ad esempio, del traffico totale) su una finestra di 3 giorni, separatamente per ciascun tipo di sensore.
+Questo aiuta a “smussare” i picchi e il rumore, specialmente nei dati Underground, che possono essere più rumorosi.
+Standardizzare (scalare) le feature:
+
+Utilizzare uno scaler (StandardScaler) aiuta a portare tutte le feature su una scala comune.
+In questo modo, il modello potrà “pesare” correttamente l’informazione proveniente dai dati Underground.
+
+Aggiornamento del set di feature per il modello misto:
+Aggiungiamo la nuova feature “rolling_prev_transiti” al set di feature usato per il modello misto.
+
+Se il MAE diminuisce, significa che le trasformazioni e la feature engineering applicata ai dati Underground (e in generale al modello misto) ha portato a previsioni più accurate.
+
+Spiegazione delle scelte:
+1. Salvataggio del tipo di sensore originale ('sensor_type'):  
+   Permette di raggruppare e calcolare statistiche (come la media mobile) in base al tipo di sensore, poiché i dati Underground potrebbero essere più rumorosi.
+2. Rolling average ('rolling_prev_transiti'):  
+   Calcolando la media mobile su una finestra di 3 giorni, si riduce il rumore e le fluttuazioni improvvise, specialmente nei dati Underground.  
+   => feature più stabili e utili per la previsione.
+3. StandardScaler:  
+   Normalizza le feature, assicurando che differenze di scala non influenzino negativamente il modello.
+4. Integrazione nel modello misto:  
+   Aggiungendo le nuove feature (rolling average) e scalando i dati, il modello può meglio apprendere le dinamiche, possibilmente migliorando le previsioni complessive (cioè abbassando il MAE).
+
+Risultati:
+- Dati underground puliti e stabili grazie alla media mobile
+- La standardizzazione permette una migliore convergenza del modello e un assegnazione migliore dei pesi alle feature.
+- MAE misto diminuito rispetto al file "Sensori 1.ipynb" -> migliore integrazione dei dati underground, trasformati, che contribuisce positivamente alla previsione complessiva.
