@@ -46,6 +46,12 @@ FROM mts_clean
 WHERE provincia = 'FC'
 AND giorno <= '2019-12-24';
 
+CREATE VIEW fc_view AS
+SELECT *
+FROM mts_clean
+WHERE provincia = 'RA'
+AND giorno <= '2019-12-24';
+
 
 
 
