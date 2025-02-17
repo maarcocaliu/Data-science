@@ -1,0 +1,4 @@
+COPY public.strada (postazione, sensori, provincia, comune, tipo_strada, numero_strada, nome_strada)
+FROM 'C:/Users/matte/Desktop/DataScience/PROG DATA SCIENCE/anagrafica_flussi_online CLEAN.csv'
+DELIMITER ';'
+CSV HEADER;
