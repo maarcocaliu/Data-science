@@ -1,0 +1,16 @@
+CREATE VIEW avg_transits_per_day AS
+SELECT 
+    AVG(transiti) AS avg_transiti,
+    AVG(trferiali) AS avg_trferiali,
+    AVG(trfestivi) AS avg_trfestivi,
+    AVG(trdiurno) AS avg_trdiurno,
+    AVG(trnotturno) AS avg_trnotturno,
+    AVG(trleggeri) AS avg_trleggeri,
+    AVG(trpesanti) AS avg_trpesanti,
+    EXTRACT(DAY FROM giorno) AS giorno,
+    EXTRACT(MONTH FROM giorno) AS mese,
+    EXTRACT(YEAR FROM giorno) AS anno
+FROM 
+    public.mts_anagrafica
+GROUP BY 
+    EXTRACT(DAY FROM giorno), EXTRACT(MONTH FROM giorno), EXTRACT(YEAR FROM giorno);
