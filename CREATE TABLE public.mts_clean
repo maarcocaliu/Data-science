@@ -1,0 +1,20 @@
+Eliminata colonna con valori nulli da table public.mts e creata table public.mts_clean
+
+CREATE TABLE public.mts_clean AS
+SELECT 
+    postazione, 
+    giorno, 
+    ngiornosettimana, 
+    strada, 
+    transiti, 
+    trnonclassificato, 
+    trleggeri, 
+    trpesanti, 
+    trdiurno, 
+    trnotturno, 
+    trferiali, 
+    trfestivi
+FROM public.mts
+WHERE transiti IS NOT NULL;
+
+
