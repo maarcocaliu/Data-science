@@ -1,0 +1,8 @@
+CREATE TABLE public.strada_clean AS
+SELECT DISTINCT ON (postazione) * 
+FROM public.strada
+ORDER BY postazione;
+
+-- (Facoltativo) Se tutto è ok, rimpiazza la tabella originale:
+DROP TABLE public.strada;
+ALTER TABLE public.strada_clean RENAME TO strada;
