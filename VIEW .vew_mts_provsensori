@@ -1,0 +1,17 @@
+CREATE VIEW public.vew_mts_provsensori
+ AS
+ SELECT provincia,
+    giorno,
+    sum(transiti) AS total_transiti,
+    sum(trleggeri) AS total_trleggeri,
+    sum(trpesanti) AS total_trpesanti,
+    sum(trnonclassificato) AS total_trnonclassificati,
+    sum(trdiurno) AS total_trdiurno,
+    sum(trnotturno) AS total_trnotturno,
+    sum(trferiali) AS total_trferiali,
+    sum(trfestivi) AS total_trfestivi,
+    ngiornosettimana,
+    sensori
+   FROM mts_anagrafica
+  GROUP BY provincia, giorno, ngiornosettimana, sensori
+  ORDER BY giorno;

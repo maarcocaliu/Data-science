@@ -1,0 +1,10 @@
+CREATE TABLE public.anagrafica (
+    postazione INTEGER,
+    sensori VARCHAR(11),
+    provincia CHAR(2),
+    comune VARCHAR(50),
+    tipo_strada VARCHAR(30),
+    numero_strada VARCHAR(10),
+    nome_strada VARCHAR(100)
+);
+
