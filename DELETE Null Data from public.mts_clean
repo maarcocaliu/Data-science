@@ -1,0 +1,13 @@
+DELETE FROM public.mts_clean
+WHERE postazione IS NULL 
+   OR giorno IS NULL 
+   OR ngiornosettimana IS NULL 
+   OR strada IS NULL 
+   OR transiti IS NULL 
+   OR trnonclassificato IS NULL 
+   OR trleggeri IS NULL 
+   OR trpesanti IS NULL 
+   OR trdiurno IS NULL 
+   OR trnotturno IS NULL 
+   OR trferiali IS NULL 
+   OR trfestivi IS NULL;
