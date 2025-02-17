@@ -1,0 +1,293 @@
+postazione;comune;nome_strada
+6;FIUMALBO;Abetone e del Brennero, Strada Dell'
+7;ALTO RENO TERME;Porrettana, Strada
+9;PORTICO SAN BENEDETTO;Tosco Romagnola, Strada
+12;CATTOLICA;Adriatica, Strada
+16;BONDENO;Virgiliana, Strada
+17;MIRANDOLA;Abetone e del Brennero, Strada Dell'
+19;COLORNO;Asolana, Strada
+25;PARMA;Emilia, Via
+29;MODENA;Emilia, Via
+52;CASTELGUELFO DI BOLOGNA;Vitale (San), Strada
+53;COMACCHIO;Romea, Strada
+95;CASTEL SAN GIOVANNI;Padana Inferiore, Strada
+98;BRISIGHELLA;Brisighellese Ravennate, Strada
+100;VERUCCHIO;Marecchia, Strada
+104;ROCCABIANCA;Nuovo Ponte sul Po, Strada Del
+107;RUBIERA;Rubiera - Fontana, Strada
+108;CASTEL SAN GIOVANNI;Val Tidone, Strada Della
+112;BORETTO;Asse Val d'Enza, Strada
+115;MESOLA;Codigoro, Strada Di
+116;BAGNO DI ROMAGNA;Savio, Strada
+117;VENTASSO;Valico del Cerreto, Strada Del
+118;OTTONE;Val Trebbia, Strada Di
+122;ROTTOFRENO;Padana Inferiore, Strada
+123;PIACENZA;Gossolengo, Strada Di
+124;GOSSOLENGO;Val Trebbia, Strada Di
+125;PIACENZA;Val Nure, Strada Di
+126;PIACENZA;Carpaneto, Strada Di
+127;PIACENZA;Emilia, Via
+128;PIACENZA;Padana Inferiore, Strada
+129;PARMA;Parma nord ovest, Tangenziale Di
+130;COLLECCHIO;Cisa, Strada Della
+131;PARMA;Massese, Strada
+132;PARMA;Val d'Enza, Strada Di
+133;SORBOLO MEZZANI;Cisa, Strada Della
+134;PARMA;Asolana, Strada
+135;PARMA;Cremona, Strada Di
+137;REGGIO NELL'EMILIA;Reggio Emilia - Montecchio - Ponte Enza, Strada
+138;REGGIO NELL'EMILIA;Valico del Cerreto, Strada Del
+139;SCANDIANO;Scandiano, Strada Di
+140;REGGIO NELL'EMILIA;Emilia, Via
+141;REGGIO NELL'EMILIA;Lenin Nikolaj Ilyich Ulyanov Vladimir, Via
+143;REGGIO NELL'EMILIA;Valico del Cerreto, Strada Del
+146;MODENA;Abetone e del Brennero, Strada Dell'
+147;SPILAMBERTO;Passo Brasa, Strada Del
+148;MODENA;Emilia, Via
+149;MODENA;San Matteo Decima, Strada
+150;MODENA;Abetone e del Brennero, Strada Dell'
+151;MODENA;Romana, Strada
+152;BOLOGNA;Vignola, Strada Di
+153;SASSO MARCONI;Porrettana, Via
+154;PIANORO;Fondovalle Savena, Strada
+155;SAN LAZZARO DI SAVENA;Emilia, Via
+156;CASTENASO;Vitale (San), Strada
+157;GRANAROLO DELL'EMILIA;Donato (San), Via
+158;GRANAROLO DELL'EMILIA;Porrettana, Strada
+160;CALDERARA DI RENO;Padullese, Strada
+161;ANZOLA DELL'EMILIA;Crevalcore, Strada Di
+162;CASTELFRANCO EMILIA;Emilia, Via
+170;FORLI';Tosco Romagnola, Strada
+171;FORLI';Vecchiazzano, Strada
+173;FORLI';Bidente, Strada Del
+174;FORLI';Emilia, Via
+175;CESENA;Tiberina, Strada
+176;FORLI';Cervia, Strada Di
+177;SAN LAZZARO DI SAVENA;San Lazzaro, Strada Di
+182;SANTARCANGELO DI ROMAGNA;Marecchia, Strada
+184;RIMINI;Adriatica, Strada
+186;RIMINI;Adriatica, Strada
+187;BELLARIA IGEA MARINA;Adriatica, Strada
+188;RIMINI;Emilia, Via
+215;BENTIVOGLIO;Trasversale di Pianura, Strada
+218;POLESINE ZIBELLO;Cremona, Strada Di
+219;CADEO;Emilia, Via
+220;ALSENO;Emilia, Via
+221;NOCETO;Emilia, Via
+222;SALSOMAGGIORE TERME;Salsomaggiore e Bardi, Strada Di
+223;NOCETO;Fornovo, Strada Di
+226;TRAVERSETOLO;Pedemontana, Strada
+227;SORBOLO MEZZANI;Padana orientale, Strada
+228;BRESCELLO;Cisa, Strada Della
+229;POVIGLIO;Asse Val d'Enza, Strada
+230;GUALTIERI;Cispadana, Strada
+231;GUALTIERI;Valico del Cerreto, Strada Del
+236;FINALE EMILIA;Correggio, Strada Di
+237;QUATTRO CASTELLA;Rivalta - Vezzanella, Strada
+238;ALBINEA;Albinea - Pratissolo, Strada
+239;CASALGRANDE;Montefiorino, Strada Di
+242;MARANELLO;Abetone e del Brennero, Strada Dell'
+243;VALSAMOGGIA;Valle del Samoggia, Strada
+244;VALSAMOGGIA;Provinciale, Via
+245;SAVIGNANO SUL PANARO;Vignola, Strada Di
+246;SAN GIOVANNI IN PERSICETO;San Matteo della Decima, Strada Di
+247;SANT'AGATA BOLOGNESE;San Matteo della Decima, Strada Di
+251;IMOLA;Selice o Montanara Imolese, Strada
+252;MEDICINA;Trasversale di Pianura, Strada
+253;MEDICINA;Vitale (San), Strada
+254;CASTEL SAN PIETRO TERME;Emilia, Via
+255;CASTEL SAN PIETRO TERME;Emilia, Via
+256;FAENZA;Brisighellese Ravennate, Strada
+257;FAENZA;Brisighellese Ravennate, Strada
+258;BERTINORO;Emilia, Via
+259;CESENA;Cervese, Strada
+260;CESENA;Cesenatico, Strada
+261;CESENA;Emilia, Via
+262;SAVIGNANO SUL RUBICONE;Emilia, Via
+263;RICCIONE;Adriatica, Via
+269;MEDOLLA;Abetone e del Brennero, Strada Dell'
+274;MALALBERGO;Porrettana, Strada
+275;MINERBIO;Donato (San), Strada
+276;GRANAROLO DELL'EMILIA;Trasversale di Pianura, Strada
+277;BUDRIO;Zenzalino, Strada
+278;BUDRIO;Zenzalino, Strada
+279;OZZANO DELL'EMILIA;Colunga, Strada
+280;ZOLA PREDOSA;Valle del Lavino, Strada
+281;VALSAMOGGIA;Castelfranco - Monteveglio I tronco, Strada
+282;ANZOLA DELL'EMILIA;Emilia, Via
+285;CREVALCORE;Palata, Strada
+287;CENTO;Cento - Finale Emilia, Strada
+288;PIEVE DI CENTO;Centese, Strada
+289;CENTO;San Matteo della Decima, Strada Di
+290;CASTELLO D'ARGILE;San Benedetto, Strada
+291;SAN PIETRO IN CASALE;Galliera, Strada
+292;SAN GIORGIO DI PIANO;Galliera, Strada
+294;GATTATICO;Asse Val d'Enza, Strada
+295;TORRILE;Golese, Strada Di
+298;FIDENZA;Due Ponti, Strada Dei
+300;CORTEMAGGIORE;Val d'Arda, Strada Della
+301;ALSENO;Bardi, Strada Di
+302;FIDENZA;Soragna, Strada Di
+303;BORGONOVO VAL TIDONE;Mottaziana, Strada Di
+304;PODENZANO;Podenzano, Strada Di
+305;CARPANETO PIACENTINO;Castell'Arquato, Strada Di
+306;PONTE DELL'OLIO;Val Nure, Strada Di
+307;TRAVO;Val Trebbia, Strada Di
+308;BORGONOVO VAL TIDONE;Val Tidone, Strada Della
+309;MONTICELLI D'ONGINA;Padana Inferiore, Strada
+310;CADELBOSCO DI SOPRA;Castelnovo, Strada Di
+311;GUASTALLA;Cispadana, Strada
+312;NOVELLARA;Novellara - Guastalla, Strada
+314;REGGIOLO;Tagliata - Staffola, Strada
+318;CASALGRANDE;Rubiera - Sant'Antonino, Strada
+319;SASSUOLO;Magreta, Strada Di
+321;SASSUOLO;Scandiano Nuova Pedemontana, Strada Di
+323;MARANELLO;Scandiano Nuova Pedemontana, Strada Di
+328;MODENA;Montefiorino, Strada Di
+330;MARZABOTTO;Porrettana, Strada
+331;SASSO MARCONI;Val di Setta e Val di Bisenzio, Strada Di
+332;CASTEL BOLOGNESE;Casolana Riolese, Strada
+333;FAENZA;Emilia, Via
+334;FAENZA;Canale Naviglio, Strada
+335;COTIGNOLA;San Silvestro - Felisio, Strada
+336;BAGNACAVALLO;Vitale (San), Strada
+337;LUGO;Quarantola, Strada
+339;PREDAPPIO;Rabbi, Strada Del
+340;FORLI';Monda, Strada
+342;GATTEO;Gatteo, Strada
+343;GALEATA;Bidente, Strada Del
+344;MERCATO SARACENO;Tiberina, Strada
+345;VERGHERETO;Tiberina, Strada
+348;SAN MAURO PASCOLI;Cagnona, Strada
+349;CESENATICO;Adriatica, Strada
+350;RIMINI;Rimini - Montescudo, Strada
+351;CORIANO;San Marino, Strada Di
+352;RIMINI;Santarcangelo - Mare, Strada
+354;RICCIONE;Flaminia - Conca, Strada
+355;SAN GIOVANNI IN MARIGNANO;Saludecese, Strada
+356;REGGIOLO;Tagliata - Staffola, Strada
+357;CASOLA VALSENIO;Casolana Riolese, Strada
+376;OSTELLATO;Codigoro, Strada Di
+377;BONDENO;Bondeno - Ficarolo, Strada
+380;RAVENNA;Romea, Strada
+381;MODENA;Nord di Modena e diramazione per Sassuolo, Tangenziale
+383;REGGIO NELL'EMILIA;Reggio Emilia, Tangenziale Di
+385;CASTEL SAN GIOVANNI;Padana Inferiore, Strada
+388;ALSENO;Salsediana, Strada
+389;VILLANOVA SULL'ARDA;Due Ponti, Strada Dei
+390;MONTICELLI D'ONGINA;Val d'Arda, Strada Della
+391;CASTELVETRO PIACENTINO;Padana Inferiore, Strada
+393;CAORSO;Padana Inferiore, Strada
+394;BORGO VAL DI TARO;Colle di Cento Croci, Strada Del
+395;FORNOVO DI TARO;Fondo Valle Taro, Strada Di
+396;VARANO DE MELEGARI;Varsi, Strada Di
+397;FIDENZA;Soragna, Strada Di
+398;FONTEVIVO;Busseto, Strada Di
+399;SISSA TRECASALI;Trecasali - Torrile, Strada
+400;SAN SECONDO PARMENSE;Cremona, Strada Di
+401;TRAVERSETOLO;Val d'Enza, Strada Di
+402;PARMA;Pilastrello, Strada Del
+403;PARMA;Parma - Mezzani, Strada
+404;FELINO;Alighieri Dante, Via
+405;SALA BAGANZA;Calestano e di Calestano - Berceto, Strada Di
+410;CODIGORO;Codigoro - Pomposa - Volano, Strada
+411;LAGOSANTO;Codigoro - Lagosanto, Strada
+425;DOVADOLA;Tosco Romagnola, Strada
+426;VEZZANO SUL CROSTOLO;Valico del Cerreto, Strada Del
+427;SCANDIANO;Pratissolo - Felina, Strada
+428;CARPINETI;Val di Secchia, Strada
+429;MONTECCHIO EMILIA;Sant'Ilario - San Polo, Strada
+430;MONTECCHIO EMILIA;Reggio Emilia - Montecchio - Ponte Enza, Strada
+431;SANT'ILARIO D'ENZA;Sant'Ilario - San Polo, Strada
+432;SANT'ILARIO D'ENZA;Calerno - Montecchio, Strada
+434;CAMPEGINE;Nicola (San), Via
+435;FORLIMPOPOLI;Diramazione Fratta, Strada
+436;BAGNO DI ROMAGNA;Carnaio, Strada
+437;POGGIO TORRIANA;Uso, Strada
+438;POGGIO TORRIANA;Santarcangelo, Strada
+439;SANTARCANGELO DI ROMAGNA;Trasversale Marecchia, Strada
+440;SAN CLEMENTE;Riccione - Morciano, Strada
+441;SAN GIOVANNI IN MARIGNANO;Tavullia, Strada
+442;RAVENNA;Umbro Casentinese Romagnola tratto Dismano, Strada
+443;FAENZA;Marzeno, Strada
+444;RUSSI;Roncalceci, Strada
+445;MASSA LOMBARDA;Selice - Montanara - Imolese, Strada
+446;LUGO;Bastia, Strada
+447;GOSSOLENGO;Gossolengo, Strada Di
+448;NOVELLARA;Novellara - Reggiolo, Strada
+449;CAMPEGINE;Asse Val d'Enza, Strada
+450;GUASTALLA;Guastalla - Ponte Po, Strada
+451;LUZZARA;Cispadana, Strada
+452;REGGIO NELL'EMILIA;Reggio Emilia - Bagnolo - Novellara, Strada
+453;FORMIGINE;Nord di Modena e diramazione per Sassuolo, Tangenziale
+454;RIMINI;San Marino, Strada Di
+500;CANOSSA;Val d'Enza, Strada Di
+501;CREVALCORE;Crevalcore, Strada Di
+502;BOLOGNA;Valle del Lavino, Strada
+503;MONTE SAN PIETRO;Valle del Lavino, Strada
+504;SAN LAZZARO DI SAVENA;Valle dell'Idice, Strada
+505;IMOLA;Selice o Montanara Imolese, Strada
+600;CASTEL SAN PIETRO TERME;San Carlo, Strada
+601;CASTEL SAN PIETRO TERME;Val Sillaro, Strada
+602;CREVALCORE;Crevalcore - Galeazza I tronco, Strada
+603;CREVALCORE;Bevilacqua, Strada
+604;PIANORO;Ganzole, Strada
+605;GAGGIO MONTANO;Passo Brasa, Strada Del
+606;POGGIO RENATICO;Cispadana, Strada
+607;FORLI';Villafranca, Strada
+608;CESENA;Diegaro - Sant'Egidio, Strada
+609;MARANO SUL PANARO;Fondovalle Panaro, Strada
+610;BUSSETO;Busseto, Strada Di
+611;MEDESANO;Fornovo, Strada Di
+612;LANGHIRANO;Massese, Strada
+613;TRAVERSETOLO;Argini, Strada Degli
+614;CORTEMAGGIORE;Cortemaggiore, Strada Di
+615;PIACENZA;Milano, Piazzale
+616;CASTELVETRO PIACENTINO;Due Ponti, Strada Dei
+617;GRAGNANO TREBBIENSE;Agazzano, Strada Di
+618;BAGNACAVALLO;Vitale (San), Strada
+619;BAGNACAVALLO;Canale Naviglio, Strada
+620;CORREGGIO;Correggio, Strada Di
+621;CANOSSA;Val d'Enza, Strada Di
+622;CORREGGIO;Correggio, Strada Di
+623;RIO SALICETO;Novellara - Campagnola - Rio Saliceto, Strada
+624;REGGIO NELL'EMILIA;Rivalta - Vezzanella, Strada
+625;SANTARCANGELO DI ROMAGNA;Santarcangelo, Strada
+626;SAN CLEMENTE;Conca, Strada
+627;VERGATO;Porrettana, Strada
+628;COMACCHIO;Romea, Strada
+629;FORLI';Forlì, Tangenziale Di
+630;CESENA;Cesena, Tangenziale Di
+631;SARSINA;Tiberina, Strada
+632;MODENA;Modena sud, Tangenziale Di
+633;MODENA;Modena sud, Tangenziale Di
+634;PAVULLO NEL FRIGNANO;Abetone e del Brennero, Strada Dell'
+635;PIACENZA;Piacenza, Tangenziale Di
+636;PARMA;Parma nord ovest, Tangenziale Di
+637;COLLECCHIO;Cisa, Strada Della
+638;REGGIO NELL'EMILIA;Emilia, Via
+639;CARPINETI;Valico del Cerreto, Strada Del
+650;FORLI';Emilia, Via
+651;CASTEL BOLOGNESE;Emilia, Via
+652;ARGENTA;Adriatica, Strada
+653;CERVIA;Cervia, Strada Di
+654;CERVIA;Cesena - Cervia, Strada
+655;RAVENNA;Vitale (San), Strada
+660;ARGENTA;Poggiorenatico - Santa Maria Codifiume, Strada
+661;FISCAGLIA;Mare, Via Del
+662;COPPARO;Copparo, Strada
+663;CODIGORO;Gran Linea, Strada
+664;CAMPOSANTO;Camposanto, Tangenziale Di
+665;PIACENZA;Sud Ovest di Piacenza, Tangenziale
+666;FORLI';Rabbi, Strada Del
+670;REGGIO NELL'EMILIA;Reggio Emilia, Tangenziale Di
+675;RAVENNA;Romea, Strada
+676;RAVENNA;Adriatica, Strada
+677;RAVENNA;Tosco Romagnola, Strada
+678;RAVENNA;Adriatica, Strada
+680;FELINO;Nuova Pedemontana, Strada
+681;SCANDIANO;Bagno - Arceto - Scandiano, Strada
+682;BOMPORTO;Panaria bassa, Strada
+683;CASTENASO;Lungosavena, Strada
+684;CASTEL MAGGIORE;Nuova Galliera, Strada
+685;MONTE SAN PIETRO;Valle del Lavino, Strada
